@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+        :root {
+            --main: #7b4ee4;
+            --darkblue: #362078;
+            --black: #060606;
+            --white: #e7dff4;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: system-ui;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        header {
+            padding: 20px 0px;
+            box-shadow: 2px 2px 15px var(--black);
+        }
+
+        .container {
+            width: 1140px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .col-div-6 {
+            width: 50%;
+            float: left;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 25px;
+            color: var(--black);
+        }
+
+        .logo span {
+            color: var(--main);
+        }
+
+        .nav {
+            float: right;
+        }
+
+        .nav li {
+            list-style: none;
+            float: left;
+            padding: 3px 20px;
+        }
+
+        .nav li a {
+            text-decoration: none;
+            color: var(--black);
+        }
+
+        .nav li button {
+            padding: 7px 15px;
+            background: var(--main);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: -5px;
+        }
+
+        .banner-section {
+            background-image: url('https://media.istockphoto.com/photos/the-black-and-silver-are-light-gray-with-white-the-gradient-is-the-picture-id1332097112?b=1&k=20&m=1332097112&s=170667a&w=0&h=D_26WN2nM805ssHpKsrqFe9mE63_j2bNefybNF0wOLw=');
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .heading {
+            color: var(--white);
+            font-size: 40px;
+            letter-spacing: 1px;
+            margin-top: 14%;
+        }
+
+        .p1 {
+            color: white;
+            width: 395px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+
+        .input-box {
+            box-shadow: 1px 7px 8px 0px #222121;
+            width: 360px;
+            border-radius: 50%;
+        }
+
+        .input-box input[type="text"] {
+            padding: 9px;
+            width: 265px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .input-box button {
+            padding: 10px 27px;
+            border-radius: 0px 5px 5px 0px;
+            border: none;
+            margin-left: -6px;
+            background: var(--darkblue);
+            color: white;
+            cursor: pointer;
+        }
+
+        .ban-img {
+            width: 250px;
+            margin-bottom: -50px;
+
+        }
+
+        .b-img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .heading1 {
+            margin-top: 20px;
+            color: var(--main);
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .blog-heading {
+            font-size: 29px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--black);
+        }
+
+        .text {
+            font-size: 13px;
+            letter-spacing: 1px;
+            color: var(--black);
+            margin-bottom: 20px;
+        }
+
+        .name {
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #a1a1a1;
+            font-size: 14px;
+        }
+
+        .lr-box {
+            padding: 10px 20px;
+
+        }
+
+        .b-img-1 {
+            width: 100%;
+            height: 160px;
+            border-radius: 10px;
+            margin-top: 7px;
+        }
+
+        .blog-heading-1 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--black);
+        }
+
+        .line {
+            width: 100%;
+            margin-top: 15px;
+            border: none;
+            height: 1px;
+            background: #ddd;
+        }
+
+        .lr-box:hover {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+
+        .box-1:hover {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+
+        .box-2 {
+            width: 28.5%;
+            float: left;
+            margin: 25px;
+        }
+
+        .box-2:hover {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+
+        .foot-section {
+            background: var(--main);
+        }
+
+        .foot-inner {
+            width: 500px;
+            margin: 0 auto;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .ibox2 {
+            margin: 0 auto;
+            width: 380px;
+        }
+
+        footer {
+            background: var(--darkblue);
+            padding: 15px;
+        }
+
+        footer p {
+            color: var(--white);
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="col-div-6">
+                <p class="logo"><span>Blogo-</span>Holic</p>
+            </div>
+            
+            <% if(session.user) { %>
+            
+            <div class="col-div-6">
+                <ul class="nav">
+                    <li><a href="/about">About US</a></li>
+                    <li><a href="/writeblog">Add Blog</a></li>
+                    <li><a href="/profile">Profile</a></li>
+                    <li><button><a href="/logout">Logout</a></button></a></li>
+                </ul>
+            </div>
+            <% } else { %>
+                <div class="col-div-6">
+                    <ul class="nav">
+                        <li><a href="/about">About Us</a></li>
+                        <li><button><a href="/signup">Login/Signup</a></button></a></li>
+                    </ul>
+                </div>
+            <% } %>
+            <div class="clearfix"></div>
+        </div>
+    </header>
+
+    <section class="banner-section">
+        <div class="container">
+            <div class="col-div-6">
+                <h1 class="heading">Where Content Meets<br> Creation </h1>
+                <p class="p1">Blog to Share.. to connect... </p>
+                    <form action="/search" method="POST">
+                <div class="input-box"><input type="text" placeholder="Enter category To Search" name="search"><button type="submit">Find</button></div>
+            </form>
+            </div>
+            <div class="col-div-6">
+                <br><br><br><br>
+                <div style="text-align: center;"><img
+                        src="https://www.garyvaynerchuk.com/wp-content/uploads/150624-The_Current_state_of_blogging_1200x628-01.png"
+                        class="ban-img"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </section>
+
+
+    <section>
+        <div class="container">
+            <br><br>
+            <div class="col-div-6">
+                <div class="box-1">
+                    <img src="https://media.istockphoto.com/photos/the-black-and-silver-are-light-gray-with-white-the-gradient-is-the-picture-id1332097112?b=1&k=20&m=1332097112&s=170667a&w=0&h=D_26WN2nM805ssHpKsrqFe9mE63_j2bNefybNF0wOLw=" class="b-img">
+                    <h3 class="heading1">Travel</h3>
+                    <p class="blog-heading">Beautiful Location For Travel</p>
+                    <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
+                        Ipsum has been the Beautiful Location For Travel</p>
+                    <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                </div>
+            </div>
+            <div class="col-div-6">
+                <% for(var i=0; i<3; i++) { %>
+                    <a href="/blogs/category/<%=blog2[i].id %>">
+                <div class="lr-box">
+                    
+                    
+                    <div class="col-div-6">
+                        <h3 class="heading1"> <%= blog2[i].categories %></h3>
+                        <p class="blog-heading-1"><%= blog2[i].title %></p>
+                        
+                        
+                    </div>
+                    <div class="col-div-6">
+                        <img src="<%= blog2[i].image %>" class="b-img-1">
+                    </div>
+                    <div class="clearfix"></div>
+                    <hr class="line">
+                </a>
+                </div>
+                <% }  %>
+
+
+                <!-- <div class="lr-box">
+                    <div class="col-div-6">
+                        <h3 class="heading1">Technology</h3>
+                        <p class="blog-heading-1">Looking for tech blogs</p>
+                        <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting </p>
+                        <span class="name">Manoj Singh . SEP 21, 2021</span>
+                    </div>
+                    <div class="col-div-6">
+                        <img src="image/t.jpg" class="b-img-1">
+                    </div>
+                    <div class="clearfix"></div>
+                    <hr class="line">
+                </div>
+
+                <div class="lr-box">
+                    <div class="col-div-6">
+                        <h3 class="heading1">Food</h3>
+                        <p class="blog-heading-1">Good Food Good Health</p>
+                        <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting </p>
+                        <span class="name">Manoj Singh . SEP 21, 2021</span>
+                    </div>
+                    <div class="col-div-6">
+                        <img src="image/fun.jpg" class="b-img-1">
+                    </div>
+                    <div class="clearfix"></div>
+                    <hr class="line">
+                </div> -->
+
+            </div>
+
+            <div class="clearfix"></div>
+        </div>
+    </section>
+
+    <br><br>
+
+
+    <section>
+        <div class="container" style="text-align:center;">
+            <h3>Latest stories</h3>
+            <br>
+
+            <% blog3.forEach(function(blog3){ %>
+            <a href="/blogs/category/<%=blog3.id%>">
+            <div class="box-2">
+                <img src="<%= blog3.image %>" class="b-img-1">
+                <h3 class="heading1"><%= blog3.categories %></h3>
+                <p class="blog-heading-1"><%= blog3.title %></p>
+            </div>
+        </a>
+            <% } )%>
+            
+            
+
+            <div class="clearfix"></div>
+
+            
+
+            <div class="clearfix"></div>
+        </div>
+    </section>
+
+
+    <section class="foot-section">
+        <div class="container">
+            <div class="foot-inner">
+                <h1 class="heading" style="margin: 0px;">Get our weekly email</h1>
+                
+                <div class="input-box ibox2"><input type="text" placeholder="Enter Your Email"><button>Sign up</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</body>
+
+</html>

@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&display=swap");
+body {
+  align-items: center;
+  background: #e0e0e3;
+  display: flex;
+  flex-direction: column;
+  font-family: "Assistant", sans-serif;
+  justify-content: center;
+  height: 100vh;
+  user-select: none;
+}
+.check {
+  align-items: center;
+  display: flex;
+  margin-bottom: 16px;
+}
+.test {
+  display: none;
+  opacity: 0.5;
+  position: absolute;
+  transform: translateX(-3px);
+  width: 326px;
+  z-index: 1;
+}
+.test.hide {
+  display: none;
+}
+.phone {
+  align-items: center;
+  background: #fff;
+  border-radius: 18px;
+  display: flex;
+  flex-direction: column;
+  height: 448px;
+  position: relative;
+  width: 210px;
+  box-shadow: 0px 1.7px 2.2px rgba(0, 0, 0, 0.02),
+    0px 4px 5.3px rgba(0, 0, 0, 0.028), 0px 7.5px 10px rgba(0, 0, 0, 0.035),
+    0px 13.4px 17.9px rgba(0, 0, 0, 0.042),
+    0px 25.1px 33.4px rgba(0, 0, 0, 0.05), 0px 60px 80px rgba(0, 0, 0, 0.07);
+}
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 14px;
+}
+.chevron:before {
+  content: " ";
+  background-color: #282828;
+  width: 1px;
+  height: 7px;
+  position: absolute;
+  left: 10px;
+  transform: translateX(11px) translateY(17px) rotate(45deg);
+}
+.chevron:after {
+  content: " ";
+  background-color: #282828;
+  width: 1px;
+  height: 7px;
+  position: absolute;
+  left: 10px;
+  transform: translateX(11px) translateY(22px) rotate(-45deg);
+}
+.avatar {
+  background-color: #e0e0e3;
+  border-radius: 50%;
+  height: 80px;
+  margin-top: 20px;
+  width: 80px;
+}
+.avatar.capture {
+  display: none;
+}
+body.capture .avatar {
+  display: none;
+}
+body.capture .avatar.capture {
+  display: block;
+}
+.name {
+  font-size: 18px;
+  font-weight: 700;
+  margin-top: 4px;
+}
+.name.capture {
+  display: none;
+}
+body.capture .name {
+  display: none;
+}
+body.capture .name.capture {
+  display: block;
+}
+.obfuscate {
+  background-color: #e0e0e3;
+  display: inline-block;
+  height: 6px;
+  width: 40px;
+}
+.position {
+  color: #666;
+  font-size: 11px;
+  margin-bottom: 8px;
+}
+.prop {
+  align-self: flex-start;
+  color: #666;
+  font-size: 12px;
+  margin: 12px 20px 0;
+}
+.value {
+  align-self: flex-start;
+  border-bottom: 1px solid #666;
+  font-size: 12px;
+  font-weight: 700;
+  margin: 4px 20px 0;
+  padding: 0 0 2px;
+  width: 170px;
+}
+.value.capture {
+  display: none;
+}
+body.capture .value {
+  display: none;
+}
+body.capture .value.capture {
+  display: block;
+}
+.values {
+  display: flex;
+  width: 170px;
+}
+.value--small {
+  width: 100%;
+  margin: 0 12px 0 0px;
+}
+.value--small .obfuscate {
+  width: 20px;
+}
+.value--small:nth-child(5) {
+  margin: 0;
+}
+.value--small:nth-child(6) {
+  margin: 0;
+}
+.joined {
+  align-self: flex-start;
+  color: #666;
+  font-size: 10px;
+  margin: 32px 20px 0;
+}
+.date {
+  align-self: flex-start;
+  color: #282828;
+  font-size: 10px;
+  font-weight: 600;
+}
+.date.capture {
+  display: none;
+}
+body.capture .date {
+  display: none;
+}
+body.capture .date.capture {
+  display: inline;
+}

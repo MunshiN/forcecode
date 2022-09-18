@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+
+<body>
+    
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <form action="/search" method="POST">
+        <input type="text" name="search" required>
+        <button type="submit">Search</button>
+    </form>
+
+    <div class="row">
+        <% blog.forEach(function(blog){ %>
+            <div class="col-md-12 col-lg-4 mb-4">
+                <div class="card-body">
+                    <p class="small">
+                        <%= blog.title%>
+                    </p>
+                    <p class="small">
+                        <%= blog.categories%>
+                    </p>
+
+                </div>
+                <button data-products="<%= JSON.stringify(blog)%>" class="add-likes">
+                    <span>ADD</span>
+                  </button>
+            </div>
+            <% } )%>
+    </div>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+    <script src="/static/like.js"></script>
+</body>
+
+</html>

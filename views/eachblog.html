@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blow-addblog</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+
+    <link rel="shortcut icon" href="/s" type="image/png">
+    <style>
+        :root {
+            --main: #7b4ee4;
+            --darkblue: #362078;
+            --black: #060606;
+            --white: #e7dff4;
+        }
+
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: system-ui;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        header {
+            padding: 20px 0px;
+            box-shadow: 2px 2px 15px var(--black);
+        }
+
+        .container {
+            width: 1140px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .col-div-6 {
+            width: 50%;
+            float: left;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 25px;
+            color: var(--black);
+        }
+
+        .logo span {
+            color: var(--main);
+        }
+
+        .nav {
+            float: right;
+        }
+
+        .nav li {
+            list-style: none;
+            float: left;
+            padding: 3px 20px;
+        }
+
+        .nav li a {
+            text-decoration: none;
+            color: var(--black);
+        }
+
+        .nav li button {
+            padding: 7px 15px;
+            background: var(--main);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: -5px;
+        }
+
+        .banner-section {
+            background-image: url('https://media.istockphoto.com/photos/the-black-and-silver-are-light-gray-with-white-the-gradient-is-the-picture-id1332097112?b=1&k=20&m=1332097112&s=170667a&w=0&h=D_26WN2nM805ssHpKsrqFe9mE63_j2bNefybNF0wOLw=');
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .heading {
+            color: var(--white);
+            font-size: 40px;
+            letter-spacing: 1px;
+            margin-top: 14%;
+        }
+        .ban-img {
+            width: 250px;
+            margin-bottom: -50px;
+
+        }
+
+        .b-img {
+            width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="container">
+            <div class="col-div-6">
+                <p class="logo"><span>Blogo-</span>Holic</p>
+            </div>
+            <div class="col-div-6">
+                <ul class="nav">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#"></a></li>
+                    <li><a href="#">Contact</a></li>
+                    <li><button><a href="/blogs/category/<%= blog.id %>">Share Link</a></button></a></li>
+                </ul>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </header>
+
+    <section class="banner-section">
+        <div class="container">
+            <div class="col-div-6">
+                <h1 class="heading">Where Content Meets<br> Creation </h1>
+                
+            </div>
+            <div class="col-div-6">
+                <br><br><br><br>
+                <div style="text-align: center;"><img
+                        src="https://www.garyvaynerchuk.com/wp-content/uploads/150624-The_Current_state_of_blogging_1200x628-01.png"
+                        class="ban-img"></div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
+    </section>
+    <div class="main" id="main">
+
+        <% blog.forEach(function(blog){ %>
+        <h1 id="title"><%= blog.title %></h1>
+        
+        <figure id="img-div">
+            <img id="image" src="<%= blog.image %>" alt="image" style="height: 400px; width: 400px;">
+            
+        </figure>
+        <div id="tribute-info">
+            <p class="headlines"><%= blog.description %></p>
+            <button data-products="<%= JSON.stringify(blog)%>" class="add-likes">
+                <span>Total Likes</span><span>--<%= blog.likes %></span>
+              </button>
+
+              <form action="/mail" method="POST">
+              <button type="submit">Share Link</button>
+            </form>
+            
+        
+
+
+        <% } )%>
+
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+    <script src="/static/like.js"></script>
+</body>
+
+</html>
