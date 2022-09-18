@@ -1,37 +1,313 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <style>
+        :root {
+            --main: #7b4ee4;
+            --darkblue: #362078;
+            --black: #060606;
+            --white: #e7dff4;
+        }
 
+        * {
+            margin: 0px;
+            padding: 0px;
+            font-family: system-ui;
+        }
+
+        .clearfix {
+            clear: both;
+        }
+
+        header {
+            padding: 20px 0px;
+            box-shadow: 2px 2px 15px var(--black);
+        }
+
+        .container {
+            width: 1140px;
+            max-width: 100%;
+            margin: 0 auto;
+        }
+
+        .col-div-6 {
+            width: 50%;
+            float: left;
+        }
+
+        .logo {
+            font-weight: bold;
+            font-size: 25px;
+            color: var(--black);
+        }
+
+        .logo span {
+            color: var(--main);
+        }
+
+        .nav {
+            float: right;
+        }
+
+        .nav li {
+            list-style: none;
+            float: left;
+            padding: 3px 20px;
+        }
+
+        .nav li a {
+            text-decoration: none;
+            color: var(--black);
+        }
+
+        .nav li button {
+            padding: 7px 15px;
+            background: var(--main);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: -5px;
+        }
+
+        .banner-section {
+            background-image: url('https://media.istockphoto.com/photos/the-black-and-silver-are-light-gray-with-white-the-gradient-is-the-picture-id1332097112?b=1&k=20&m=1332097112&s=170667a&w=0&h=D_26WN2nM805ssHpKsrqFe9mE63_j2bNefybNF0wOLw=');
+            height: 400px;
+            overflow: hidden;
+        }
+
+        .heading {
+            color: var(--white);
+            font-size: 40px;
+            letter-spacing: 1px;
+            margin-top: 14%;
+        }
+
+        .p1 {
+            color: white;
+            width: 395px;
+            margin-top: 20px;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+            font-size: 14px;
+        }
+
+        .input-box {
+            box-shadow: 1px 7px 8px 0px #222121;
+            width: 360px;
+            border-radius: 50%;
+        }
+
+        .input-box input[type="text"] {
+            padding: 9px;
+            width: 265px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+        }
+
+        .input-box button {
+            padding: 10px 27px;
+            border-radius: 0px 5px 5px 0px;
+            border: none;
+            margin-left: -6px;
+            background: var(--darkblue);
+            color: white;
+            cursor: pointer;
+        }
+
+        .ban-img {
+            width: 250px;
+            margin-bottom: -50px;
+
+        }
+
+        .b-img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .heading1 {
+            margin-top: 20px;
+            color: var(--main);
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+
+        .blog-heading {
+            font-size: 29px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--black);
+        }
+
+        .text {
+            font-size: 13px;
+            letter-spacing: 1px;
+            color: var(--black);
+            margin-bottom: 20px;
+        }
+
+        .name {
+            text-transform: uppercase;
+            font-weight: 600;
+            color: #a1a1a1;
+            font-size: 14px;
+        }
+
+        .lr-box {
+            padding: 10px 20px;
+
+        }
+
+        .b-img-1 {
+            width: 100%;
+            height: 160px;
+            border-radius: 10px;
+            margin-top: 7px;
+        }
+
+        .blog-heading-1 {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: var(--black);
+        }
+
+        .line {
+            width: 100%;
+            margin-top: 15px;
+            border: none;
+            height: 1px;
+            background: #ddd;
+        }
+
+        .lr-box:hover {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+
+        .box-1:hover {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+
+        .box-2 {
+            width: 28.5%;
+            float: left;
+            margin: 25px;
+        }
+
+        .box-2:hover {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+
+        .foot-section {
+            background: var(--main);
+        }
+
+        .foot-inner {
+            width: 500px;
+            margin: 0 auto;
+            padding: 50px;
+            text-align: center;
+        }
+
+        .ibox2 {
+            margin: 0 auto;
+            width: 380px;
+        }
+
+        footer {
+            background: var(--darkblue);
+            padding: 15px;
+        }
+
+        footer p {
+            color: var(--white);
+            text-align: center;
+        }
+    </style>
 </head>
 
 <body>
-    
 
-
-    <div class="row">
-        <% blog.forEach(function(blog){ %>
-            <div class="col-md-12 col-lg-4 mb-4">
-                <div class="card-body">
-                    <p class="small">
-                        <%= blog.title%>
-                    </p>
-                    <p class="small">
-                        <%= blog.categories%>
-                    </p>
-
-                </div>
-                <button data-products="<%= JSON.stringify(blog)%>" class="add-likes">
-                    <span>ADD</span>
-                  </button>
+    <header>
+        <div class="container">
+            <div class="col-div-6">
+                <a href="/"><p class="logo"><span>Blogo-</span>Holic</p></a>
             </div>
+            
+            <% if(session.user) { %>
+            
+            <div class="col-div-6">
+                <ul class="nav">
+                    <li><a href="/about">About US</a></li>
+                    <li><a href="/writeblog">Add Blog</a></li>
+                    <li><a href="/profile">Profile</a></li>
+                    <li><button><a href="/logout">Logout</a></button></a></li>
+                </ul>
+            </div>
+            <% } else { %>
+                <div class="col-div-6">
+                    <ul class="nav">
+                        <li><a href="/about">About Us</a></li>
+                        <li><button><a href="/signup">Login/Signup</a></button></a></li>
+                    </ul>
+                </div>
+            <% } %>
+            <div class="clearfix"></div>
+        </div>
+    </header>
+
+   
+    <br><br>
+
+
+    <section>
+        <div class="container" style="text-align:center;">
+            <h3>Maching Results</h3>
+            <br>
+
+            <% blog2.forEach(function(blog2){ %>
+            <a href="/blogs/category/<%=blog2.id%>">
+            <div class="box-2">
+                <img src="<%= blog2.image %>" class="b-img-1">
+                <h3 class="heading1"><%= blog2.categories %></h3>
+                <p class="blog-heading-1"><%= blog2.title %></p>
+                <p class="blog-heading-1">Likes-<%= blog2.likes %></p>
+            </div>
+        </a>
             <% } )%>
-    </div>
-    
+            
+            
+
+            <div class="clearfix"></div>
+
+            
+
+            <div class="clearfix"></div>
+        </div>
+    </section>
+
+
+    <section class="foot-section">
+        <div class="container">
+            <div class="foot-inner">
+                <h1 class="heading" style="margin: 0px;">Get our weekly email</h1>
+                
+                <div class="input-box ibox2"><input type="text" placeholder="Enter Your Email"><button>Sign up</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
 </body>
 
 </html>

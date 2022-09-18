@@ -35,23 +35,69 @@ function initRoutes(app) {
     })
 
     app.get("/search/:key",async(req,resp)=>{
-        
+        let a=[]
         console.log(req.params.key)
          blog.find().then(data=>{
-            let a= []
+            let = []
             console.log(data.length)
+            if(req.params.key=='food'){
             for(i =0; i<data.length;i++){
                 console.log(data[i].categories)
-                if(data[i].categories=='Food')
+                if(data[i].categories=='food')
                 {
-                    console.log('hi')
+                   
                     a.push(data[i])
-                    console.log(a)
-                    console.log('-----------')
+                    
                 }
             }
 
-            resp.render('search',{blog:a})
+            return resp.render('search',{blog2:a})
+        }
+
+        if(req.params.key=='travel'){
+            for(i =0; i<data.length;i++){
+                console.log(data[i].categories)
+                if(data[i].categories=='travel')
+                {
+                   
+                    a.push(data[i])
+                    
+                }
+            }
+
+            return resp.render('search',{blog2:a})
+        }
+
+        if(req.params.key=='science'){
+            for(i =0; i<data.length;i++){
+                console.log(data[i].categories)
+                if(data[i].categories=='science')
+                {
+                   
+                    a.push(data[i])
+                    
+                }
+            }
+
+            return resp.render('search',{blog2:a})
+        }
+
+        if(req.params.key=='art'){
+            for(i =0; i<data.length;i++){
+                console.log(data[i].categories)
+                if(data[i].categories=='art')
+                {
+                   
+                    a.push(data[i])
+                    
+                }
+            }
+
+            return resp.render('search',{blog2:a})
+        }
+        else{
+            resp.redirect('/')
+        }
         })
        
     })

@@ -236,11 +236,17 @@ app.post('/update-likes',async(req,resp)=>{
 //search type of blogs
 app.post('/search',(req,resp)=>{
     var s = req.body.search
-    if(s=='Food'){
-        resp.redirect('/search/art')
+    if(s=='food'){
+        resp.redirect('/search/food')
+        }
+        if(s=='travel'){
+            resp.redirect('/search/travel')
         }
         if(s=='science'){
             resp.redirect('/search/science')
+        }
+        if(s=='art'){
+            resp.redirect('/search/art')
         }
     
 })
