@@ -77,7 +77,6 @@ app.post('/mail',(req,resp)=>{
         }
     });
     
-    console.log(req.session.blogs._id)
     var mailOptions = {
         from:'nmunshi40@gmail.com',
         to:'naharlaxit@gmail.com',
