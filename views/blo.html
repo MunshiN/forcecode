@@ -286,18 +286,22 @@
 
 
     <section>
+        <% for(var i=0; i<1; i++) { %>
+            <a href="/blogs/category/<%=blog2[i].id %>">
         <div class="container">
+            
             <br><br>
             <div class="col-div-6">
                 <div class="box-1">
-                    <img src="https://media.istockphoto.com/photos/the-black-and-silver-are-light-gray-with-white-the-gradient-is-the-picture-id1332097112?b=1&k=20&m=1332097112&s=170667a&w=0&h=D_26WN2nM805ssHpKsrqFe9mE63_j2bNefybNF0wOLw=" class="b-img">
-                    <h3 class="heading1">Travel</h3>
-                    <p class="blog-heading">Beautiful Location For Travel</p>
-                    <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem
-                        Ipsum has been the Beautiful Location For Travel</p>
-                    <p class="text">Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
+                    <img src="<%= blog2[i].image %>" class="b-img" style="height: 250px; width: 500px;">
+                    <h3 class="heading1"> <%= blog2[i].categories %></h3>
+                    <p class="blog-heading"><%= blog2[i].title %></p>
+                    
+                    <p class="text">Likes-<%= blog2[i].likes %> </p>
                 </div>
             </div>
+        </a>
+            <% }  %>
             <div class="col-div-6">
                 <% for(var i=0; i<3; i++) { %>
                     <a href="/blogs/category/<%=blog2[i].id %>">
